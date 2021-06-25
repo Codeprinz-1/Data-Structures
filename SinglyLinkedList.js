@@ -93,11 +93,21 @@ class SinglyLinkedList {
     this.length++;
     return this
   }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return null;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+    let previousNode = this.get(index - 1);
+    let removedNode = previousNode.next
+    previousNode.next = removedNode.next;
+    return previousNode
+  }
 }
 
 let u = new SinglyLinkedList()
 u.push('fhfh').push('ghghg').push('hfhf')
-console.log(u.insert(1, 'p'))
+console.log(u.remove(1))
 // console.log(u)
 // console.log(u.shift())
 // console.log(u.shift())
