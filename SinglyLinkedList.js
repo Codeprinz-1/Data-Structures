@@ -81,12 +81,24 @@ class SinglyLinkedList {
     item.val = val;
     return true
   }
+
+  insert(index, val) {
+    if (index < 0 || index > this.length) return null;
+    const newNode = new Node(val)
+    if (index === 0) return this.unShift(newNode);
+    if (index === this.length) return this.push(newNode);
+    let previousNode = this.get(val - 1);
+    newNode.next = previousNode.next;
+    previousNode.next = newNode;
+    this.length++;
+    return this
+  }
 }
 
 let u = new SinglyLinkedList()
 u.push('fhfh').push('ghghg').push('hfhf')
-console.log(u.set(1, 'p'))
-console.log(u)
+console.log(u.insert(1, 'p'))
+// console.log(u)
 // console.log(u.shift())
 // console.log(u.shift())
 // console.log(u)
