@@ -75,5 +75,22 @@ class SinglyLinkedList {
     return current;
   }
 
+  set(index, val) {
+    let item = this.get(index)
+    if (!item) return false;
+    item.val = val;
+    return true
+  }
 }
 
+let u = new SinglyLinkedList()
+u.push('fhfh').push('ghghg').push('hfhf')
+console.log(u.set(1, 'p'))
+console.log(u)
+// console.log(u.shift())
+// console.log(u.shift())
+// console.log(u)
+// console.log(u.unShift('p'))
+// console.log(u.unShift('o'))
+// console.log(u.unShift('y'))
+// console.log(u)
