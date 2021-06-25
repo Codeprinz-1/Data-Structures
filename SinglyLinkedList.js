@@ -55,5 +55,16 @@ class SinglyLinkedList {
     }
   }
 
-  
+  unShift(val) {
+    const newNode = new Node(val)
+    newNode.next = this.head;
+    this.head = newNode;
+    if (!this.tail) {
+      this.tail = this.head
+    }
+    this.length ++;
+    return this;
+  }
+
+
 }
