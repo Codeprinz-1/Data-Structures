@@ -99,15 +99,31 @@ class SinglyLinkedList {
     if (index === 0) return this.shift();
     if (index === this.length - 1) return this.pop();
     let previousNode = this.get(index - 1);
-    let removedNode = previousNode.next
+    let removedNode = previousNode.next;
     previousNode.next = removedNode.next;
+    this.length--;
     return previousNode
+  }
+
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let prev = null;
+    let next;
+    while(node) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
   }
 }
 
 let u = new SinglyLinkedList()
 u.push('fhfh').push('ghghg').push('hfhf')
-console.log(u.remove(1))
+console.log(u.reverse())
 // console.log(u)
 // console.log(u.shift())
 // console.log(u.shift())
