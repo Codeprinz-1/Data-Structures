@@ -1,3 +1,5 @@
+// this is the code for the singlylinked list
+
 class Node {
   constructor(val) {
     this.val = val
@@ -121,14 +123,13 @@ class SinglyLinkedList {
   }
 }
 
-let u = new SinglyLinkedList()
-u.push('fhfh').push('ghghg').push('hfhf')
-console.log(u.reverse())
-// console.log(u)
-// console.log(u.shift())
-// console.log(u.shift())
-// console.log(u)
-// console.log(u.unShift('p'))
-// console.log(u.unShift('o'))
-// console.log(u.unShift('y'))
-// console.log(u)
+// the singlylinked is efficient in some  methods and not so much in others
+
+// for example, its more efficient to do an insertion in a singly linked list than it is to do on an array as you can probably already tell fro0m the code
+// an insertion in a singly linked list is 0(1) wheareas in an array, in the worst case, we wpould have to change the index of every item so its 0(n)
+
+// the speed of removing things from the singly linked list depends on where the removal takes place
+// if it is at the begining, its 0(1) but at the end is 0(n) because we would have to iterate over the list to find the second to the last item and break its connection to the last
+
+// searching is 0(n)
+// accessing is also 0(n)
