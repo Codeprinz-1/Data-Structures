@@ -56,6 +56,19 @@ class DoublyLinkedList {
     this.length --;
     return removedNode;
   }
+
+  unShift(val) {
+    const newNode = new Node(val);
+    if (this.head) {
+      newNode.next = this.head;
+      this.head.prev = newNode;
+    } else {
+      this.head = newNode;
+      this.tail = newNode;
+    }
+    this.length ++;
+    return this;
+  }
 }
 
 let double = new DoublyLinkedList();
@@ -63,4 +76,5 @@ console.log(double.push(9).push(0).push(7));
 console.log(double.shift())
 console.log(double.shift())
 console.log(double.shift())
+console.log(double.unShift(65))
 console.log(double)
