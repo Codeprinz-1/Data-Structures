@@ -69,12 +69,32 @@ class DoublyLinkedList {
     this.length ++;
     return this;
   }
+
+  get(index) {
+    if (index >= this.length || index < 0) return null;
+    let value;
+    if (index < this.length / 2) {
+      value = this.head;
+      for (let i = 0; i < index; i++) {
+        value = value.next;
+      }
+    } else {
+      value = this.tail;
+      for (let i = this.length - 1; i > index; i--) {
+        value = value.prev;
+      }
+    }
+    return value;
+  }
 }
 
 let double = new DoublyLinkedList();
-console.log(double.push(9).push(0).push(7));
-console.log(double.shift())
-console.log(double.shift())
-console.log(double.shift())
-console.log(double.unShift(65))
-console.log(double)
+double.push(9).push(0).push(7);
+// console.log(double.shift())
+// console.log(double.shift())
+// console.log(double.shift())
+// console.log(double.unShift(65))
+// console.log(double)
+console.log(double.get(0))
+console.log(double.get(1))
+console.log(double.get(2))
