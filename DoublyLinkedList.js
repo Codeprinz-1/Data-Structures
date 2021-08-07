@@ -123,18 +123,3 @@ class DoublyLinkedList {
     return node;
   }
 }
-
-let double = new DoublyLinkedList();
-double.push(9).push(0).push(7);
-// console.log(double.shift())
-// console.log(double.shift())
-// console.log(double.shift())
-// console.log(double.unShift(65))
-// console.log(double)
-// console.log(double.get(0))
-// console.log(double.get(1))
-// console.log(double.get(2))
-// console.log(double.set(2, 67))
-console.log(double.remove(0));
-console.log(double.remove(0));
-console.log(double);
