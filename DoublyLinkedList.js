@@ -62,6 +62,7 @@ class DoublyLinkedList {
     if (this.head) {
       newNode.next = this.head;
       this.head.prev = newNode;
+      this.head = newNode;
     } else {
       this.head = newNode;
       this.tail = newNode;
@@ -93,6 +94,21 @@ class DoublyLinkedList {
     node.val = val;
     return this;
   }
+
+  insert(index, val) {
+    if (index < 0 || index > this.length) return null;
+    if (index === 0) return this.unShift(val);
+    if (index === this.length) return this.push(val);
+    let newNode = new Node(val);
+    let previousNode = this.get(index -1);
+    let nextNode = previousNode.next;
+    previousNode.next = newNode;
+    newNode.next = newNode;
+    newNode.prev = previousNode;
+    nextNode.prev = nextNode;
+    this.length ++;
+    return this;
+  }
 }
 
 let double = new DoublyLinkedList();
@@ -102,7 +118,10 @@ double.push(9).push(0).push(7);
 // console.log(double.shift())
 // console.log(double.unShift(65))
 // console.log(double)
-console.log(double.get(0))
-console.log(double.get(1))
-console.log(double.get(2))
-console.log(double.set(2, 67))
+// console.log(double.get(0))
+// console.log(double.get(1))
+// console.log(double.get(2))
+// console.log(double.set(2, 67))
+console.log(double.insert(0, 34));
+console.log(double.insert(1, 'iu'));
+console.log(double.insert(5, 89));
