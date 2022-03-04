@@ -124,11 +124,20 @@ class DoublyLinkedList {
   }
 
   reverse() {
-    if (this.length === 0) return this;
-    if (this.length === 1) {
-      [this.head, this.tail] = [this.tail, this.head];
+    if (this.length <= 1) return this;
+    [this.head, this.tail] = [this.tail, this.head];
+    if (this.length === 2) {
       this.head.next = this.tail;
       this.tail.prev = this.head;
+    } else {
+      let value = this.head;
+      for (i = 0; i < this.length; i++) {
+        const next = value.next;
+        value.next = value.prev;
+        value.prev = next;
+        value = value.next;
+      }
     }
+    return this;
   }
 }
