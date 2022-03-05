@@ -12,12 +12,12 @@ class BinarySearchTree {
   }
 
   insert(value) {
-    var newNode = new Node(value);
+    let newNode = new Node(value);
     if (this.root === null) {
       this.root = newNode;
       return this;
     } else {
-      var current = this.root;
+      let current = this.root;
       while (true) {
         if (value < current.value) {
           if (current.left === null) {
@@ -37,4 +37,6 @@ class BinarySearchTree {
       }
     }
   }
+
+  find(value) {}
 }
