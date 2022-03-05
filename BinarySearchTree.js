@@ -97,7 +97,7 @@ class BinarySearchTree {
     return allValues;
   }
 
-  deptFirstTraverseInOrder() {
+  deptFirstTransverseInOrder() {
     if (!this.root) return null;
     const allValues = [];
     const recursiveSearch = (node) => {
@@ -114,26 +114,4 @@ class BinarySearchTree {
 // and is not guaranteed for every kind of binary tree for example we can have a tree that has only lefts of rights,
 // basically a flat tree, such a tree would be O(n) cause the operations will increase proportionally to the size of the tree
 
-// the other search methtods are not unique to a binarry search tree but can work on any binary tree,
-// they were added to this class to avoid having to defind separate classes
-
-const tree = new BinarySearchTree();
-tree.insert(9);
-tree.insert(8);
-tree.insert(2);
-tree.insert(22);
-tree.insert(7);
-tree.insert(23);
-tree.insert(1);
-console.log(tree.deptFirstSearchPreOrder(9).value);
-console.log(tree.deptFirstSearchPreOrder(8).value);
-console.log(tree.deptFirstSearchPreOrder(2).value);
-console.log(tree.deptFirstSearchPreOrder(22).value);
-console.log(tree.deptFirstSearchPreOrder(7).value);
-console.log(tree.deptFirstSearchPreOrder(23).value);
-console.log(tree.deptFirstSearchPreOrder(3434));
-console.log(tree.deptFirstSearchPreOrder(35));
-console.log(tree.deptFirstSearchPreOrder(35));
-console.log(tree.deptFirstSearchPreOrder(99090));
-console.log(tree.deptFirstSearchPreOrder(1).value);
-console.log(tree.deptFirstTransversePostOrder());
+// the other search and transverse methods are not unique to a binarry search tree but can work on any binary tree, they are also O(n)
