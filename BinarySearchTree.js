@@ -19,10 +19,18 @@ class BinarySearchTree {
     } else {
       var current = this.root;
       while (true) {
-        if (valeu < current.value) {
+        if (value < current.value) {
           if (current.left === null) {
             current.left = newNode;
+            current.right === null;
             return this;
+          }
+        } else {
+          if (value > current.value) {
+            if (current.right === null) {
+              current.right === newNode;
+              current.left === null;
+            }
           }
         }
       }
