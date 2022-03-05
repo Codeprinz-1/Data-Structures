@@ -96,6 +96,16 @@ class BinarySearchTree {
     recursiveSearch(this.root);
     return allValues;
   }
+
+  deptFirsTraverseInOrder() {
+    if (!this.root) return null;
+    const allValues = [];
+    const recursiveSearch = (node) => {
+      if (node.left) recursiveSearch(node.left);
+      allValues.push(node.value);
+      if (node.right) recursiveSearch(node.right);
+    };
+  }
 }
 
 // the find and insert methods are both O(log n) which is good as time complexities go but that is just the average
