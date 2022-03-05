@@ -70,7 +70,20 @@ class BinarySearchTree {
     return null;
   }
 
-  deptFirstSearch(value) {}
+  deptFirstSearchPereOrder(value) {
+    if (!this.root) return null;
+    let foundNode = null;
+    const recursiveSearch = (node) => {
+      if (node.value === value) {
+        foundNode = node;
+      } else {
+        if (node.right) recursiveSearch(node.right);
+        if (node.left) recursiveSearch(node.left);
+      }
+    };
+    recursiveSearch(this.root);
+    return foundNode;
+  }
 }
 
 // the find and insert methods are both O(log n) which is good as time complexities go but that is just the average
@@ -88,14 +101,14 @@ tree.insert(22);
 tree.insert(7);
 tree.insert(23);
 tree.insert(1);
-console.log(tree.breadthFirstSearch(9).value);
-console.log(tree.breadthFirstSearch(8).value);
-console.log(tree.breadthFirstSearch(2).value);
-console.log(tree.breadthFirstSearch(22).value);
-console.log(tree.breadthFirstSearch(7).value);
-console.log(tree.breadthFirstSearch(23).value);
-console.log(tree.breadthFirstSearch(3434));
-console.log(tree.breadthFirstSearch(35));
-console.log(tree.breadthFirstSearch(35));
-console.log(tree.breadthFirstSearch(99090));
-console.log(tree.breadthFirstSearch(1).value);
+console.log(tree.deptFirstSearch(9).value);
+console.log(tree.deptFirstSearch(8).value);
+console.log(tree.deptFirstSearch(2).value);
+console.log(tree.deptFirstSearch(22).value);
+console.log(tree.deptFirstSearch(7).value);
+console.log(tree.deptFirstSearch(23).value);
+console.log(tree.deptFirstSearch(3434));
+console.log(tree.deptFirstSearch(35));
+console.log(tree.deptFirstSearch(35));
+console.log(tree.deptFirstSearch(99090));
+console.log(tree.deptFirstSearch(1).value);
