@@ -69,11 +69,16 @@ class BinarySearchTree {
     }
     return null;
   }
+
+  deptFirstSearch(value) {}
 }
 
-// the find and inser methods we implemented in this binary tree are both O(log n) which is good as time complexities go
-// but that is just the average and is not guaranteed for every kind of binary tree for example we can have a tree that has only
-// lefts of rights, basically a flat tree, such a tree would be O(n) cause the operations will increase proportionally to the size of the tree
+// the find and insert methods are both O(log n) which is good as time complexities go but that is just the average
+// and is not guaranteed for every kind of binary tree for example we can have a tree that has only lefts of rights,
+// basically a flat tree, such a tree would be O(n) cause the operations will increase proportionally to the size of the tree
+
+// the other search methtods are not unique to a binarry search tree but can work on any binary tree,
+// they were added to this class to avoid having to defind separate classes
 
 const tree = new BinarySearchTree();
 tree.insert(9);
