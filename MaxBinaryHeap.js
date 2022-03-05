@@ -4,10 +4,6 @@ class MaxBinaryHeap {
   }
 
   insert(value) {
-    if (!this.values.length) {
-      this.values.push(value);
-      return this;
-    }
     this.values.push(value);
     const reshuffle = (index) => {
       const parent = Math.floor((index - 1) / 2);
@@ -21,6 +17,14 @@ class MaxBinaryHeap {
     };
     reshuffle(this.values.length - 1);
     return this;
+  }
+
+  extractMax() {
+    const max = this.values[0];
+    const end = this.values.pop();
+    this.values[0] = end;
+    this.sinkDown();
+    return max;
   }
 }
 
@@ -43,4 +47,4 @@ const validateHeap = (list) => {
   return true;
 };
 
-console.log(validateHeap(binaryHeap.values));
+console.log(binaryHeap.values);
