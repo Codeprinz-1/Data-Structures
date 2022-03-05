@@ -53,3 +53,19 @@ class BinarySearchTree {
     return null;
   }
 }
+
+const tree = new BinarySearchTree();
+tree.insert(9);
+tree.insert(8);
+tree.insert(2);
+tree.insert(22);
+tree.insert(7);
+tree.insert(23);
+tree.insert(1);
+console.log(tree.find(8));
+console.log(tree.find(9));
+console.log(tree.find(2));
+console.log(tree.find(22));
+console.log(tree.find(7));
+console.log(tree.find(23));
+console.log(tree.find(1));
