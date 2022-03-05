@@ -53,3 +53,7 @@ class BinarySearchTree {
     return null;
   }
 }
+
+// the two methods we implemented in this binary tree are both O(log n) which is good as time complexities go
+// but that is just the average and is not guaranteed for every kind of binary tree for example we can have a tree that has only
+// lefts of rights, basically a flat tree, such a tree would be O(n) cause the operations will i ncrease proportionally to the size of the tree
