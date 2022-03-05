@@ -105,6 +105,8 @@ class BinarySearchTree {
       allValues.push(node.value);
       if (node.right) recursiveSearch(node.right);
     };
+    recursiveSearch(this.root);
+    return allValues;
   }
 }
 
