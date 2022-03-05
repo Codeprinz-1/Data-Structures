@@ -52,8 +52,45 @@ class BinarySearchTree {
     }
     return null;
   }
+
+  breadthFirstSearch(value) {
+    // idealy a queue is used here but we would use an array
+    if (!this.root) return null;
+    const queue = [this.root];
+    // const current = this.head;
+    while (queue[0]) {
+      const current = queue[0];
+      current.right && queue.push(current.right);
+      current.left && queue.push(current.left);
+      if (current.value === value) {
+        return current;
+      }
+      queue.shift();
+    }
+    return null;
+  }
 }
 
-// the two methods we implemented in this binary tree are both O(log n) which is good as time complexities go
+// the find and inser methods we implemented in this binary tree are both O(log n) which is good as time complexities go
 // but that is just the average and is not guaranteed for every kind of binary tree for example we can have a tree that has only
 // lefts of rights, basically a flat tree, such a tree would be O(n) cause the operations will increase proportionally to the size of the tree
+
+const tree = new BinarySearchTree();
+tree.insert(9);
+tree.insert(8);
+tree.insert(2);
+tree.insert(22);
+tree.insert(7);
+tree.insert(23);
+tree.insert(1);
+console.log(tree.breadthFirstSearch(9).value);
+console.log(tree.breadthFirstSearch(8).value);
+console.log(tree.breadthFirstSearch(2).value);
+console.log(tree.breadthFirstSearch(22).value);
+console.log(tree.breadthFirstSearch(7).value);
+console.log(tree.breadthFirstSearch(23).value);
+console.log(tree.breadthFirstSearch(3434));
+console.log(tree.breadthFirstSearch(35));
+console.log(tree.breadthFirstSearch(35));
+console.log(tree.breadthFirstSearch(99090));
+console.log(tree.breadthFirstSearch(1).value);
