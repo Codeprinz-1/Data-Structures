@@ -70,15 +70,15 @@ class BinarySearchTree {
     return null;
   }
 
-  deptFirstSearchPereOrder(value) {
+  deptFirstSearchPreOrder(value) {
     if (!this.root) return null;
     let foundNode = null;
     const recursiveSearch = (node) => {
       if (node.value === value) {
         foundNode = node;
       } else {
-        if (node.right) recursiveSearch(node.right);
         if (node.left) recursiveSearch(node.left);
+        if (node.right) recursiveSearch(node.right);
       }
     };
     recursiveSearch(this.root);
@@ -101,14 +101,14 @@ tree.insert(22);
 tree.insert(7);
 tree.insert(23);
 tree.insert(1);
-console.log(tree.deptFirstSearch(9).value);
-console.log(tree.deptFirstSearch(8).value);
-console.log(tree.deptFirstSearch(2).value);
-console.log(tree.deptFirstSearch(22).value);
-console.log(tree.deptFirstSearch(7).value);
-console.log(tree.deptFirstSearch(23).value);
-console.log(tree.deptFirstSearch(3434));
-console.log(tree.deptFirstSearch(35));
-console.log(tree.deptFirstSearch(35));
-console.log(tree.deptFirstSearch(99090));
-console.log(tree.deptFirstSearch(1).value);
+console.log(tree.deptFirstSearchPereOrder(9).value);
+console.log(tree.deptFirstSearchPereOrder(8).value);
+console.log(tree.deptFirstSearchPereOrder(2).value);
+console.log(tree.deptFirstSearchPereOrder(22).value);
+console.log(tree.deptFirstSearchPereOrder(7).value);
+console.log(tree.deptFirstSearchPereOrder(23).value);
+console.log(tree.deptFirstSearchPereOrder(3434));
+console.log(tree.deptFirstSearchPereOrder(35));
+console.log(tree.deptFirstSearchPereOrder(35));
+console.log(tree.deptFirstSearchPereOrder(99090));
+console.log(tree.deptFirstSearchPereOrder(1).value);
