@@ -97,7 +97,7 @@ class BinarySearchTree {
     return allValues;
   }
 
-  deptFirsTraverseInOrder() {
+  deptFirstTraverseInOrder() {
     if (!this.root) return null;
     const allValues = [];
     const recursiveSearch = (node) => {
