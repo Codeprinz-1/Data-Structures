@@ -22,20 +22,11 @@ class MaxBinaryHeap {
   extractMax() {
     const max = this.values[0];
     const end = this.values.pop();
-    if (this.values.length > 0) {
-      this.values[0] = end;
-      this.sinkDown();
-      return max;
-    }
-  }
-
-  sinkDown() {
-    let index = 0;
     const length = this.values.length;
-    const element = this.values[0];
-    while (true) {
-      let leftChildIndex = 2 * index + 1;
-      let rightChildIndex = 2 * index + 2;
+    const sinkDown = (index = 0) => {
+      const element = this.values[index];
+      const leftChildIndex = 2 * index + 1;
+      const rightChildIndex = 2 * index + 2;
       let leftChild, rightChild;
       let swap = null;
 
@@ -54,11 +45,16 @@ class MaxBinaryHeap {
           swap = rightChildIndex;
         }
       }
-      if (swap === null) break;
+      if (swap === null) return;
       this.values[index] = this.values[swap];
       this.values[swap] = element;
-      index = swap;
+      sinkDown(swap);
+    };
+    if (this.values.length > 0) {
+      this.values[0] = end;
+      sinkDown();
     }
+    return max;
   }
 }
 
@@ -80,6 +76,14 @@ const validateHeap = (list) => {
   }
   return true;
 };
+console.log(binaryHeap.values);
 
 console.log(binaryHeap.extractMax());
 console.log(validateHeap(binaryHeap.values));
+console.log(binaryHeap.values);
+console.log(binaryHeap.extractMax());
+console.log(validateHeap(binaryHeap.values));
+console.log(binaryHeap.values);
+console.log(binaryHeap.extractMax());
+console.log(validateHeap(binaryHeap.values));
+console.log(binaryHeap.values);
