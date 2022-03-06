@@ -76,14 +76,3 @@ const validateHeap = (list) => {
   }
   return true;
 };
-console.log(binaryHeap.values);
-
-console.log(binaryHeap.extractMax());
-console.log(validateHeap(binaryHeap.values));
-console.log(binaryHeap.values);
-console.log(binaryHeap.extractMax());
-console.log(validateHeap(binaryHeap.values));
-console.log(binaryHeap.values);
-console.log(binaryHeap.extractMax());
-console.log(validateHeap(binaryHeap.values));
-console.log(binaryHeap.values);
