@@ -67,3 +67,4 @@ class PriorityQueue {
 }
 
 // in this implementation of the priority queue, the greater the number, the more the priority
+// also the time complexity of the dequeue and enqueue methods are both O(log n), search ing through a priority queue is O(n)
