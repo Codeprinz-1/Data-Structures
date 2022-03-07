@@ -59,3 +59,5 @@ class HashTable {
     return keysArr;
   }
 }
+
+// the time complexity of the set, get and delete methods on hashables are O(n)
