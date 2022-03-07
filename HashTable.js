@@ -13,16 +13,31 @@ class HashTable {
     }
     return total;
   }
-
   set(key, value) {
-    const index = this._hash(key);
+    let index = this._hash(key);
     if (!this.keyMap[index]) {
       this.keyMap[index] = [];
     }
-    this.keyMap[index].push(key);
-    return index;
+    this.keyMap[index].push([key, value]);
+  }
+  get(key) {
+    let index = this._hash(key);
+    if (this.keyMap[index]) {
+      for (let i = 0; i < this.keyMap[index].length; i++) {
+        if (this.keyMap[index][i][0] === key) {
+          return this.keyMap[index][i][1];
+        }
+      }
+    }
+    return undefined;
   }
 }
 
-const ht = new HashTable();
-console.log(ht.set("hello world", "goodbye!!"));
+let ht = new HashTable(17);
+ht.set("maroon", "#800000");
+ht.set("yellow", "#FFFF00");
+ht.set("olive", "#808000");
+ht.set("salmon", "#FA8072");
+ht.set("lightcoral", "#F08080");
+ht.set("mediumvioletred", "#C71585");
+ht.set("plum", "#DDA0DD");
