@@ -32,4 +32,15 @@ class HashTable {
     }
     return null;
   }
+
+  values() {
+    const valuesArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          valuesArr.push(this.keyMap[i][j]);
+        }
+      }
+    }
+  }
 }
