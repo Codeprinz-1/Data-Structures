@@ -39,7 +39,7 @@ class HashTable {
       if (this.keyMap[i]) {
         for (let j = 0; j < this.keyMap[i].length; j++) {
           if (!valuesArr.includes(this.keyMap[i][j][1]))
-            valuesArr.push(this.keyMap[i][j]);
+            valuesArr.push(this.keyMap[i][j][1]);
         }
       }
     }
