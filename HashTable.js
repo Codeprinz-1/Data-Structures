@@ -32,12 +32,3 @@ class HashTable {
     return undefined;
   }
 }
-
-let ht = new HashTable(17);
-ht.set("maroon", "#800000");
-ht.set("yellow", "#FFFF00");
-ht.set("olive", "#808000");
-ht.set("salmon", "#FA8072");
-ht.set("lightcoral", "#F08080");
-ht.set("mediumvioletred", "#C71585");
-ht.set("plum", "#DDA0DD");
