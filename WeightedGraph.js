@@ -41,6 +41,7 @@ class WeightedGraph {
     for (let vertex in this.adjacencyList) {
       if (vertex === start) {
         distances[vertex] = 0;
+        nodes.enqueue(vertex, 0);
       } else {
         distances[vertex] = Infinity;
         nodes.enqueue(vertex, Infinity);
