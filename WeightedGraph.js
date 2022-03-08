@@ -1,4 +1,4 @@
-class Graph {
+class WeightedGraph {
   constructor() {
     this.adjacencyList = {};
   }
@@ -13,20 +13,20 @@ class Graph {
   }
 }
 
-const graph = new Graph();
-graph.addVertex("A");
-graph.addVertex("B");
-graph.addVertex("C");
-graph.addVertex("D");
-graph.addVertex("E");
-graph.addVertex("F");
+const weightedGraph = new WeightedGraph();
+weightedGraph.addVertex("A");
+weightedGraph.addVertex("B");
+weightedGraph.addVertex("C");
+weightedGraph.addVertex("D");
+weightedGraph.addVertex("E");
+weightedGraph.addVertex("F");
 
-graph.addEdge("A", "B");
-graph.addEdge("A", "C");
-graph.addEdge("B", "D");
-graph.addEdge("C", "E");
-graph.addEdge("D", "E");
-graph.addEdge("D", "F");
-graph.addEdge("E", "F");
-console.log(graph.breadthFirstTraverse("A"));
-console.log(graph.adjacencyList);
+weightedGraph.addEdge("A", "B");
+weightedGraph.addEdge("A", "C");
+weightedGraph.addEdge("B", "D");
+weightedGraph.addEdge("C", "E");
+weightedGraph.addEdge("D", "E");
+weightedGraph.addEdge("D", "F");
+weightedGraph.addEdge("E", "F");
+console.log(weightedGraph.breadthFirstTraverse("A"));
+console.log(weightedGraph.adjacencyList);
