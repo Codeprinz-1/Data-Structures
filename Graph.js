@@ -29,7 +29,23 @@ class Graph {
     delete this.adjacencyList[vertex];
   }
 
-  deptFirstTraversal(node) {}
+  deptFirstRecursiveTraversal(start) {
+    const result = [];
+    const visited = {};
+    const adjacencyList = this.adjacencyList;
+
+    const dfs = (vertex) => {
+      if (!vertex) return null;
+      visited[vertex] = true;
+      result.push(vertex);
+      adjacencyList[vertex].forEach((neighbor) => {
+        if (visited[neighbor]) {
+          return dfs(neighbor);
+        }
+      });
+    };
+    dfs(start);
+  }
 }
 
 const graph = new Graph();
