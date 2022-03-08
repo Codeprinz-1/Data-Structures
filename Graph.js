@@ -56,8 +56,7 @@ class Graph {
 
     visited[stack] = true;
     while (stack.length) {
-      console.log(stack);
-      currentVertex = stack.pop;
+      currentVertex = stack.pop();
       result.push(currentVertex);
 
       this.adjacencyList[currentVertex].forEach((neighbor) => {
@@ -67,6 +66,7 @@ class Graph {
         }
       });
     }
+    return result;
   }
 }
 
@@ -85,5 +85,5 @@ graph.addEdge("C", "E");
 graph.addEdge("D", "E");
 graph.addEdge("D", "F");
 graph.addEdge("E", "F");
-console.log(graph.deptFirstRecursiveTraversal("A"));
+console.log(graph.deptFirstIterativeTraversal("A"));
 console.log(graph.adjacencyList);
