@@ -30,6 +30,20 @@ class WeightedGraph {
     this.adjacencyList[vertex1].push({ node: vertex2, weight });
     this.adjacencyList[vertex2].push({ node: vertex1, weight });
   }
+
+  Dijkstra(start, finish) {
+    const nodes = new PriorityQueue();
+    const distances = {};
+    const preious = {};
+
+    for (let vertex in this.adjacencyList) {
+      if (vertex === start) {
+        distances[vertex] = 0;
+      } else {
+        distances[vertex] = Infinity;
+      }
+    }
+  }
 }
 
 const weightedGraph = new WeightedGraph();
