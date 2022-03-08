@@ -47,6 +47,27 @@ class Graph {
     dfs(start);
     return result;
   }
+
+  deptFirstIterativeTraversal(start) {
+    const stack = [start];
+    const result = [];
+    const visited = {};
+    let currentVertex;
+
+    visited[stack] = true;
+    while (stack.length) {
+      console.log(stack);
+      currentVertex = stack.pop;
+      result.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          stack.push(neighbor);
+        }
+      });
+    }
+  }
 }
 
 const graph = new Graph();
