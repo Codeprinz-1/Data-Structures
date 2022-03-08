@@ -7,6 +7,10 @@ class PriorityQueue {
     this.values.push({ val, priority });
     this.sort();
   }
+
+  dequeue() {
+    return this.values.shift();
+  }
 }
 
 class WeightedGraph {
