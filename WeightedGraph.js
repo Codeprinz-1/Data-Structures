@@ -36,6 +36,7 @@ class WeightedGraph {
     const distances = {};
     const previous = {};
     let smallest;
+    let path = [];
 
     for (let vertex in this.adjacencyList) {
       if (vertex === start) {
@@ -50,6 +51,11 @@ class WeightedGraph {
     while (nodes.values.length) {
       smallest = nodes.dequeue().val;
       if (smallest === finish) {
+        while (previous[smallest]) {
+          path.push(smallest);
+          smallest = previous[smallest];
+        }
+        break;
       }
       if (smallest || distances[smallest] !== Infinity) {
         for (let neighbor in this.adjacencyList[smallest]) {
@@ -66,6 +72,7 @@ class WeightedGraph {
         }
       }
     }
+    return path.concat(smallest).reverse();
   }
 }
 
@@ -77,12 +84,12 @@ weightedGraph.addVertex("D");
 weightedGraph.addVertex("E");
 weightedGraph.addVertex("F");
 
-weightedGraph.addEdge("A", "B");
-weightedGraph.addEdge("A", "C");
-weightedGraph.addEdge("B", "D");
-weightedGraph.addEdge("C", "E");
-weightedGraph.addEdge("D", "E");
-weightedGraph.addEdge("D", "F");
-weightedGraph.addEdge("E", "F");
-console.log(weightedGraph.breadthFirstTraverse("A"));
-console.log(weightedGraph.adjacencyList);
+weightedGraph.addEdge("A", "B", 4);
+weightedGraph.addEdge("A", "C", 2);
+weightedGraph.addEdge("B", "E", 3);
+weightedGraph.addEdge("C", "D", 2);
+weightedGraph.addEdge("C", "F", 4);
+weightedGraph.addEdge("D", "E", 3);
+weightedGraph.addEdge("D", "F", 1);
+weightedGraph.addEdge("E", "F", 1);
+console.log(weightedGraph.Dijkstra("A", "E"));
