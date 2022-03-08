@@ -34,14 +34,17 @@ class WeightedGraph {
   Dijkstra(start, finish) {
     const nodes = new PriorityQueue();
     const distances = {};
-    const preious = {};
+    const previous = {};
 
     for (let vertex in this.adjacencyList) {
       if (vertex === start) {
         distances[vertex] = 0;
       } else {
         distances[vertex] = Infinity;
+        nodes.enqueue(vertex, Infinity);
       }
+
+      previous[vertex] = null;
     }
   }
 }
