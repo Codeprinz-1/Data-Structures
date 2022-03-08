@@ -39,12 +39,13 @@ class Graph {
       visited[vertex] = true;
       result.push(vertex);
       adjacencyList[vertex].forEach((neighbor) => {
-        if (visited[neighbor]) {
+        if (!visited[neighbor]) {
           return dfs(neighbor);
         }
       });
     };
     dfs(start);
+    return result;
   }
 }
 
@@ -63,5 +64,5 @@ graph.addEdge("C", "E");
 graph.addEdge("D", "E");
 graph.addEdge("D", "F");
 graph.addEdge("E", "F");
-
+console.log(graph.deptFirstRecursiveTraversal("A"));
 console.log(graph.adjacencyList);
